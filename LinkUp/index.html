@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <title>LinkUp</title>
+    <meta name="description" content="Sync and coordinate calendars with your groups" />
+    <meta name="author" content="LinkUp" />
+
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="LinkUp" />
+
+    <!-- Android specific meta tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="LinkUp" />
+    <meta property="og:description" content="Sync and coordinate calendars with your groups" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://linkup.app/opengraph-image.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@linkup_app" />
+    <meta name="twitter:image" content="https://linkup.app/opengraph-image.png" />
+    
+    <style>
+      /* Mobile app specific styles */
+      .native-app {
+        /* Prevent overscrolling/bouncing on iOS */
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      
+      /* Safe area insets for iOS */
+      .platform-ios {
+        padding-top: env(safe-area-inset-top, var(--safe-area-inset-top, 0px));
+        padding-bottom: env(safe-area-inset-bottom, var(--safe-area-inset-bottom, 0px));
+      }
+      
+      /* Disable text selection for better mobile experience */
+      .native-app * {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      
+      /* Allow text selection in specific elements */
+      .native-app input, 
+      .native-app textarea,
+      .native-app [contenteditable="true"] {
+        -webkit-user-select: text;
+        user-select: text;
+      }
+      
+      /* Disable overscroll behavior */
+      .native-app {
+        overscroll-behavior: none;
+      }
+      
+      /* Hide scrollbars on mobile but keep functionality */
+      .native-app ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      /* Tap highlight color */
+      .native-app * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
